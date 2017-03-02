@@ -91,18 +91,6 @@ ttt_1(char *host)
   else
     printf("\nCongratulations, player %d, YOU ARE THE WINNER!\n", *result_3);
 
-	result_1 = currentboard_1((void*)&currentboard_1_arg, clnt);
-	if (result_1 == (char **) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
-	result_2 = play_1(&play_1_arg, clnt);
-	if (result_2 == (int *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
-	result_3 = checkwinner_1((void*)&checkwinner_1_arg, clnt);
-	if (result_3 == (int *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
 #ifndef	DEBUG
 	clnt_destroy (clnt);
 #endif	 /* DEBUG */
