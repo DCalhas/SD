@@ -39,7 +39,9 @@ ttt_1(char *host)
     /* Get valid player square selection */
     do {
       /* Print current board */
-      currentboard_1((void*)&currentboard_1_arg, clnt);
+      result_1 = currentboard_1((void*)&currentboard_1_arg, clnt);
+      if (result_1 == (char * *) NULL) clnt_perror(clnt, "call failed");
+
       printf("%s\n", currentboard_1_arg);
       
       printf("\nPlayer %d, please enter the number of the square "
@@ -55,6 +57,7 @@ ttt_1(char *host)
       play_1_arg.column = go%3;                                /* Get column index of square   */
       
       result_2 = play_1(&play_1_arg, clnt);
+      if(result_2 == (int *) NULL) clnt_perror(clnt, "call failed");
       if (*result_2 != 0) {
 	switch (*result_2) {
 	case 1:
@@ -75,6 +78,7 @@ ttt_1(char *host)
     } while(*result_2 != 0);
 	
     result_3 = checkwinner_1((void*)&checkwinner_1_arg, clnt);
+    if(result_3 == (int *) NULL) clnt_perror(clnt, "call failed");
     play_1_arg.player = (play_1_arg.player+1)%2;                           /* Select player */
  
     printf("player %d\n", play_1_arg.player);
@@ -82,7 +86,8 @@ ttt_1(char *host)
   } while (*result_3 == -1);
   
   /* Game is over so display the final board */
-  currentboard_1((void*)&currentboard_1_arg, clnt);
+  result_1 = currentboard_1((void*)&currentboard_1_arg, clnt);
+  if(result_1 == (char * *) NULL) clnt_perror(clnt, "call failed");
   printf("%s\n", currentboard_1_arg);
   
   /* Display result message */
