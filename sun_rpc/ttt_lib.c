@@ -1,6 +1,8 @@
 #include "ttt_lib.h"
 #include <stdio.h>
 #include <pthread.h>
+#include <stdlib.h>
+#include <time.h>
 
 /* *** GAME STATE *** */
 
@@ -110,4 +112,34 @@ int checkWinner() {
     
     pthread_mutex_unlock (&mutex);
     return result; 
+}
+
+int randPlay(int player) {
+    int row, column;
+
+    pthread_mutex_lock(&mutex);
+    if (player != nextPlayer)  {
+        /* not players turn */
+        pthread_mutex_unlock(&mutex);
+        return 3;
+    }
+    if (numPlays == 9) {
+        /* no more plays left */
+        pthread_mutex_unlock(&mutex);
+        return 4;
+    }
+
+    srand(time(NULL));
+    row = rand() % 3;
+    column = rand() % 3;
+    while (board[row][column] == 'O' || board[row][column] == 'X') {
+        row = rand() % 3;
+        column = rand() % 3;
+    }
+
+    board[row][column] = (player == 1) ? 'X' : 'O';  /* Insert player symbol   */
+    nextPlayer = (nextPlayer + 1) % 2;
+    numPlays ++;
+    pthread_mutex_unlock(&mutex);
+    return 0;
 }

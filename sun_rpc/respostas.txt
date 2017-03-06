@@ -1,0 +1,7 @@
+4a - Estão no ficheiro ttt_xdr.c
+4b - No ficheiro ttt_clnt.c
+4c - Cliente -> ttt_client.c ttt_clnt.c
+	 Servidor -> ttt_server.c ttt_svc.c ttt_lib.c
+	 Ambos -> ttt_xdr.c 
+4d - ttt_client.c ttt_lib.c
+4e - O protocolo UDP

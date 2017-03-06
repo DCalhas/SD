@@ -35,4 +35,13 @@ checkwinner_1_svc(void *argp, struct svc_req *rqstp)
   result = checkWinner();
 
   return &result;
+}//server client lib
+
+int *
+randplay_1_svc(int *argp, struct svc_req *rqstp)
+{
+  static int result;
+  result = randPlay(*argp);
+
+  return &result;
 }

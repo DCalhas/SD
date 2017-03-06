@@ -41,6 +41,7 @@ ttt_1(char *host)
       /* Print current board */
       result_1 = currentboard_1((void*)&currentboard_1_arg, clnt);
       if (result_1 == (char * *) NULL) clnt_perror(clnt, "call failed");
+      printf("%s\n", *result_1);
 
       printf("%s\n", currentboard_1_arg);
       
@@ -52,13 +53,19 @@ ttt_1(char *host)
 	*result_2 = TTT_UNUSED_PLAY_RES;
 	continue;
       }
-
-      play_1_arg.row = --go/3;                                 /* Get row index of square      */
-      play_1_arg.column = go%3;                                /* Get column index of square   */
+                               /* Get column index of square   */
       
-      result_2 = play_1(&play_1_arg, clnt);
+      if(go != 10) {
+      	play_1_arg.row = --go/3;                                 /* Get row index of square      */
+      	play_1_arg.column = go%3; 
+      	result_2 = play_1(&play_1_arg, clnt);      
+      }
+      else {
+      	result_2 = randplay_1(&play_1_arg.player, clnt);
+      }
       if(result_2 == (int *) NULL) clnt_perror(clnt, "call failed");
       if (*result_2 != 0) {
+
 	switch (*result_2) {
 	case 1:
 	  printf("Position outside board.");
@@ -88,7 +95,7 @@ ttt_1(char *host)
   /* Game is over so display the final board */
   result_1 = currentboard_1((void*)&currentboard_1_arg, clnt);
   if(result_1 == (char * *) NULL) clnt_perror(clnt, "call failed");
-  printf("%s\n", currentboard_1_arg);
+  printf("%s\n", *result_1);
   
   /* Display result message */
   if(*result_3 == 2)
