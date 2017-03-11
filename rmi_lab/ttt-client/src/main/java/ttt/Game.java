@@ -18,8 +18,7 @@ public class Game {
 
 	public Game() {
 		try {
-			Registry registry = LocateRegistry.getRegistry(1099);
-			ttt = (TTTService) registry.lookup("TTT");
+			ttt = (TTTService) Naming.lookup("//localhost:1099/TTT");
 			} catch(RemoteException e) {
 				System.err.println("RemoteException: " + e.getMessage());
 			} catch(NotBoundException e) {
