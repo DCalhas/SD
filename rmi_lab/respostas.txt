@@ -1,0 +1,6 @@
+4i- Quando é usado RMI, temos uma referencia no cliente para um objecto remoto, e é a partir daí que são chamados os métodos, os quais se vão executar do lado do servidor.
+
+4ii- Cliente - Game.java
+	 Servidor - TTT.java
+	 			TTTService.java
+	 			Application.java

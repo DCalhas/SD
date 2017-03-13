@@ -1,0 +1,9 @@
+
+A funcionalidade pedida foi totalmente implementada
+
+O servidor deve executar com o seguinte comando:
+mvn install exec:java
+
+O cliente deve executar com o comando:
+
+mvn compile exec:java

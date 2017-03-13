@@ -2,6 +2,8 @@ package ttt;
 
 import java.rmi.*;
 import java.rmi.server.UnicastRemoteObject;
+
+import java.lang.*;
 /**
  * TTT - Tic Tac Toe.
  */
@@ -17,6 +19,9 @@ public class TTT extends UnicastRemoteObject implements TTTService {
 	private int nextPlayer = 0;
 	/** Number of plays */
 	private int numPlays = 0;
+
+	private char player1 = 'X';
+	private char player2 = 'O';
 
 	public TTT() throws RemoteException {}
 
@@ -63,7 +68,7 @@ public class TTT extends UnicastRemoteObject implements TTTService {
 				return false;
 
 			/* insert player symbol */
-			board[row][column] = (player == 1) ? 'X' : 'O';
+			board[row][column] = (player == 1) ? player1 : player2;
 			nextPlayer = (nextPlayer + 1) % 2;
 			numPlays++;
 			return true;
@@ -82,7 +87,7 @@ public class TTT extends UnicastRemoteObject implements TTTService {
 		/* Check for a winning line - diagonals first */
 		if ((board[0][0] == board[1][1] && board[0][0] == board[2][2])
 				|| (board[0][2] == board[1][1] && board[0][2] == board[2][0])) {
-			if (board[1][1] == 'X')
+			if (board[1][1] == player1)
 				return 1;
 			else
 				return 0;
@@ -90,14 +95,14 @@ public class TTT extends UnicastRemoteObject implements TTTService {
 			/* Check rows and columns for a winning line */
 			for (i = 0; i <= 2; i++) {
 				if ((board[i][0] == board[i][1] && board[i][0] == board[i][2])) {
-					if (board[i][0] == 'X')
+					if (board[i][0] == player1)
 						return 1;
 					else
 						return 0;
 				}
 
 				if ((board[0][i] == board[1][i] && board[0][i] == board[2][i])) {
-					if (board[0][i] == 'X')
+					if (board[0][i] == player1)
 						return 1;
 					else
 						return 0;
@@ -107,6 +112,22 @@ public class TTT extends UnicastRemoteObject implements TTTService {
 			return 2; /* A draw! */
 		else
 			return -1; /* Game is not over yet */
+	}
+
+	public void trocaSimbolo(char novo) throws RemoteException {
+		char changedPlayer = 'X';
+		if(nextPlayer == 1) {
+			changedPlayer = player1;
+			player1 = novo;
+		} else { 
+			changedPlayer = player2;
+			player2 = novo;
+	    }
+
+		for(int i = 0; i < 3; i++)
+			for (int j = 0; j < 3; j++)
+				if(board[i][j] == changedPlayer)
+					board[i][j] = novo;
 	}
 
 }

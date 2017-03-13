@@ -7,6 +7,8 @@ import java.rmi.registry.*;
 
 import java.net.MalformedURLException;
 
+import java.io.IOException;
+
 import java.util.Scanner;
 
 /** This is the client of the Tic Tac Toe game. */
@@ -37,13 +39,14 @@ public class Game {
 							+ "where you want to place your %c (or 0 to refresh the board): \n",
 					player, (player == 1) ? 'X' : 'O');
 			play = keyboardSc.nextInt();
-		} while (play > 9 || play < 0);
+		} while (play > 10 || play < 0);
 		return play;
 	}
 
 	public void playGame() {
 		int play;
 		boolean playAccepted = false;
+		char s;
 
 		do {
 			player = ++player % 2;
@@ -54,6 +57,15 @@ public class Game {
 						System.err.println("RemoteException: " + e.getMessage());
 					}
 				play = readPlay();
+				if(play == 10) {
+					System.out.println("What's the new symbol you want?");
+					try {
+						s = (char) System.in.read();
+						ttt.trocaSimbolo(s);
+						play = readPlay();
+					} catch(RemoteException e) { System.err.println("RemoteException: " + e.getMessage());
+					} catch(IOException e) { System.err.println("IOException: " + e.getMessage()); }
+				} 
 				if (play != 0) {
 					try {
 						playAccepted = ttt.play(--play / 3, play % 3, player);
