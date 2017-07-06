@@ -1,0 +1,13 @@
+org/komparator/mediator/ws/it/PingIT.class
+org/komparator/mediator/ws/it/AddToCartIT.class
+org/komparator/mediator/ws/it/BuyCartIT.class
+org/komparator/mediator/ws/it/EVALBaseIT.class
+org/komparator/mediator/ws/it/EVALSearchItemsIT.class
+org/komparator/mediator/ws/it/ListCartsIT.class
+org/komparator/mediator/ws/it/GetItemsIT.class
+org/komparator/mediator/ws/it/EVALAddToCartIT.class
+org/komparator/mediator/ws/it/EVALPingIT.class
+org/komparator/mediator/ws/it/EVALGetItemsIT.class
+org/komparator/mediator/ws/it/BaseIT.class
+org/komparator/mediator/ws/it/EVALBuyCartIT.class
+org/komparator/mediator/ws/it/SearchItemsIT.class

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.komparator.mediator.ws.it.EVALAddToCartIT
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 39.181 sec - in org.komparator.mediator.ws.it.EVALAddToCartIT

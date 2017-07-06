@@ -1,0 +1,13 @@
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/GetItemsIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/BaseIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/SearchItemsIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/EVALBuyCartIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/PingIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/EVALBaseIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/EVALSearchItemsIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/BuyCartIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/ListCartsIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/EVALGetItemsIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/EVALAddToCartIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/EVALPingIT.java
+/home/david/A06-Komparator/mediator-ws-cli/src/test/java/org/komparator/mediator/ws/it/AddToCartIT.java

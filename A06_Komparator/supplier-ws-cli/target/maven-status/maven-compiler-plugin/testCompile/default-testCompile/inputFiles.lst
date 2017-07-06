@@ -1,0 +1,10 @@
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/EVALBaseIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/EVALSearchProductsIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/PingIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/EVALBuyProductIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/BuyProductIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/EVALPingIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/EVALGetProductIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/GetProductIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/SearchProductsIT.java
+/home/david/A06-Komparator/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/BaseIT.java
